@@ -443,11 +443,11 @@ If you'd like to load your users via the Doctrine ORM, that's easy! See
 .. _c-encoding-the-users-password:
 .. _encoding-the-user-s-password:
 
-C) Encoding the User's Password
+C) Encrypting the User's Password
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Whether your users are stored in ``security.yml``, in a database or somewhere
-else, you'll want to encode their passwords. The best algorithm to use is
+else, you'll want to encrypt their passwords. The best algorithm to use is
 ``bcrypt``:
 
 .. configuration-block::
@@ -569,7 +569,7 @@ like this:
         ));
 
 Everything will now work exactly like before. But if you have dynamic users
-(e.g. from a database), how can you programmatically encode the password
+(e.g. from a database), how can you programmatically encrypt the password
 before inserting them into the database? Don't worry, see
 :ref:`security-encoding-password` for details.
 
@@ -1181,10 +1181,10 @@ is defined by the ``target`` parameter above (e.g. the ``homepage``).
 
 .. _`security-encoding-password`:
 
-Dynamically Encoding a Password
+Dynamically Encrypting a Password
 -------------------------------
 
-If, for example, you're storing users in the database, you'll need to encode
+If, for example, you're storing users in the database, you'll need to encrypt
 the users' passwords before inserting them. No matter what algorithm you
 configure for your user object, the hashed password can always be determined
 in the following way from a controller::
